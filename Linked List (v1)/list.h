@@ -16,10 +16,13 @@
 )
 
 #define LIST(type) {0, NULL, NULL, #type};
+
 #define LIST_INSERT(data, list, type) \
     (CHECK_TYPES(type, list), __list_insert__(data, list))
+
 #define LIST_GET(index, list, type) \
     (CHECK_TYPES(type, list), (type *)__list_get__(index, list))
+
 #define LIST_REMOVE(index, list, type) \
     (CHECK_TYPES(type, list), (type *)__list_remove__(index, list))
 
