@@ -5,6 +5,8 @@
 #include <string.h>
 #include <stdio.h>
 
+typedef void *LinkedList;
+
 #define DEFINE_LIST(type)               \
     struct type##_list_node             \
     {                                   \
