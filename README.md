@@ -59,7 +59,7 @@ This structure has four macros for performing manipulations:
 This structure is best suited for pointer types. \
 So all you have to do in this case is:
 
-``` 
+```c
     // Initializing the list, and setting its type to char*
     LinkedList list = LIST(char *);
 
