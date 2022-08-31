@@ -7,7 +7,7 @@ and possibly further personal use.
 * [Linked List v1](#linked-list-v1)
 * [Linked List v2](#linked-list-v2)
 
-## General Information
+## General information
 This repository is a collection of various data structures written in the C language. 
 Efficiency was not always the author's priority, some structures were created solely 
 for experimental purposes, and may have several implementations, of varying degrees of bugginess. 
@@ -19,7 +19,7 @@ Use at your own risk.
 ## Linked List v1
 </summary>
 
-### General info
+### About
 The first version of the linked list structure is created with a void pointer 
 in the list node, which can contain the address of an instance of any data type. \
 It uses macros as an interface to call all internal functions. 
@@ -28,9 +28,9 @@ to the input and those already in the list.
 
 ### Functionality
 List of functions and their complexity:
-- Inserting one element at the end of the list *O(n)*
-- Getting an element at some index *O(n)*
-- Removing an element at some index *O(n)*
+- Inserting one element at the end of the list. *O(n)*
+- Getting an element at some index. *O(n)*
+- Removing an element at some index. *O(n)*
 
 ### Usage
 This structure has four macros for performing manipulations:
