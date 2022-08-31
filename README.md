@@ -14,7 +14,10 @@ for experimental purposes, and may have several implementations, of varying degr
 Use at your own risk.
 
 <details>
-<summary> ## Linked List v1 </summary>
+<summary>
+
+## Linked List v1
+</summary>
 
 ### General info
 The first version of the linked list structure is created with a void pointer 
