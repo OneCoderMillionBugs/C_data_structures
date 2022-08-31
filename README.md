@@ -4,8 +4,8 @@ and possibly further personal use.
 
 ## Table of contents
 * [General info](#general-information)
-* [Linked List (v1)](#linked-list-(v1))
-* [Linked List (v2)](#linked-list-(v2))
+* [Linked List v1](#linked-list-v1)
+* [Linked List v2](#linked-list-v2)
 
 ## General Information
 This repository is a collection of various data structures written in the C language. 
@@ -13,7 +13,7 @@ Efficiency was not always the author's priority, some structures were created so
 for experimental purposes, and may have several implementations, of varying degrees of bugginess. 
 Use at your own risk.
 
-## Linked List (v1)
+## Linked List v1
 ### General info
 The first version of the linked list structure is created with a void pointer 
 in the list node, which can contain the address of an instance of any data type. \
