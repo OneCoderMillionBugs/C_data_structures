@@ -13,7 +13,8 @@ Efficiency was not always the author's priority, some structures were created so
 for experimental purposes, and may have several implementations, of varying degrees of bugginess. 
 Use at your own risk.
 
-## Linked List v1
+<details>
+<summary>## Linked List v1</summary>
 ### General info
 The first version of the linked list structure is created with a void pointer 
 in the list node, which can contain the address of an instance of any data type. \
@@ -74,3 +75,4 @@ So all you have to do in this case is:
     // Removing an element
     char *s3 = LIST_REMOVE(1, (&list), char *)
 ```
+</details>
