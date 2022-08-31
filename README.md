@@ -65,18 +65,24 @@ This structure is best suited for pointer types. \
 So all you have to do in this case is:
 
 ```c
-    // Initializing the list, and setting its type to char*
-    LinkedList list = LIST(char *);
+    #include "list.h"
 
-    char s1[] = "First";
-    char s2[] = "Second";
+    int main() {
+        // Initializing the list, and setting its type to char*
+        LinkedList list = LIST(char *);
 
-    // Inserting elements
-    // At this stage, if the types of input data and list data are mismatched, the program terminates
-    LIST_INSERT(s1, (&list), char *);
-    LIST_INSERT(s2, (&list), char *);
+        char s1[] = "First";
+        char s2[] = "Second";
 
-    // Removing an element
-    char *s3 = LIST_REMOVE(1, (&list), char *)
+        // Inserting elements
+        // At this stage, if the types of input data and list data are mismatched, the program terminates
+        LIST_INSERT(s1, (&list), char *);
+        LIST_INSERT(s2, (&list), char *);
+
+        // Removing an element
+        char *s3 = LIST_REMOVE(1, (&list), char *)
+
+        return 0;
+    }
 ```
 </details>
