@@ -45,8 +45,7 @@ LIST_INSERT(
     type of input data
 )
 
-// Returns an element
-// If more precisely: expected type pointer
+// Returns an element of the expected type
 LIST_GET(
     index, 
     list address, 
@@ -61,8 +60,7 @@ LIST_REMOVE(
 )
 ```
 
-This structure is best suited for pointer types. \
-So all you have to do in this case is:
+Example with strings:
 
 ```c
 #include "list.h"
@@ -87,7 +85,7 @@ int main() {
     LIST_INSERT(&sptr2, &list, char *);
 
     // Removing an element
-    char *s3 = LIST_REMOVE(0, (&list), char *);
+    char *s3 = LIST_REMOVE(0, &list, char *);
 
     return 0;
 }
