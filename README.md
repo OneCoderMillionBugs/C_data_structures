@@ -6,6 +6,7 @@ and possibly further personal use.
 * [General info](#general-information)
 * [Linked List v1](#linked-list-v1)
 * [Linked List v2](#linked-list-v2)
+* [Circular Queue](#circular-queue)
 
 ## General information
 This repository is a collection of various data structures written in the C language. 
