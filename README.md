@@ -168,7 +168,6 @@ Example of int list:
 #include "list.h"
 
 // Defining a list of a specific data type. 
-// Held only in the global scope!
 // At this stage all required structures and functions are created
 DEFINE_LIST(int)
 
