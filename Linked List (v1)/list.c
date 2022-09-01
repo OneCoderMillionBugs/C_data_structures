@@ -36,10 +36,10 @@ void *__list_remove__(size_t index, LinkedList *list)
         prev = current;
         current = current->next;
     }
-    
+
     void *result = (current != NULL) ? current->data : NULL;
 
-    if (prev != NULL && current != NULL) 
+    if (prev != NULL && current != NULL)
     {
         prev->next = current->next;
         free(current);

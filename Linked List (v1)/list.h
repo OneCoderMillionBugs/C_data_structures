@@ -6,10 +6,10 @@
 #include <stdio.h>
 
 #define CHECK_TYPES(type_a, list) (                                             \
-    strcmp(#type_a, list->type) ?                                               \
+    strcmp(#type_a, (list)->type) ?                                             \
         fprintf(                                                                \
             stderr, __FILE__":%d: error: Attempting to interact data of type %s"\
-            " with list of type %s\n", __LINE__, #type_a, list->type            \
+            " with list of type %s\n", __LINE__, #type_a, (list)->type          \
         ),                                                                      \
         exit(-1)                                                                \
     : 0                                                                         \
@@ -21,10 +21,10 @@
     (CHECK_TYPES(type, list), __list_insert__(data, list))
 
 #define LIST_GET(index, list, type) \
-    (CHECK_TYPES(type, list), (type *)__list_get__(index, list))
+    (CHECK_TYPES(type, list), *(type *)__list_get__(index, list))
 
 #define LIST_REMOVE(index, list, type) \
-    (CHECK_TYPES(type, list), (type *)__list_remove__(index, list))
+    (CHECK_TYPES(type, list), *(type *)__list_remove__(index, list))
 
 
 struct list_node
