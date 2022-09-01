@@ -59,7 +59,7 @@ LIST_REMOVE(
     type of expected data
 )
 ```
-###### Important! Do not ever input literals into LIST_INSERT
+** Important! Do not ever input literals into LIST_INSERT **\
 Example with strings:
 
 ```c
