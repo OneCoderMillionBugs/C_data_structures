@@ -93,8 +93,6 @@ typedef void *LinkedList;
         return current->data;                                       \
     }
 
-#define NEW_LIST(type) type##__list_construct__()
-
 #define TYPECHECK(type, list) (                                             \
     strcmp(#type, list->T) ?                                                \
     fprintf(                                                                \
@@ -102,6 +100,8 @@ typedef void *LinkedList;
         " with list of type %s\n", __LINE__, #type, list->T                 \
     ), exit(-1) : 0                                                         \
 )
+
+#define LIST(type) type##__list_construct__()
 
 #define LIST_INSERT(data, list, type) (                     \
     TYPECHECK(type, ((type##_LinkedList *)list)),           \
