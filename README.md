@@ -60,7 +60,7 @@ LIST_REMOVE(
 )
 ```
 **Important! Do not ever input literals into LIST_INSERT** \
-Example with strings:
+Example with string:
 
 ```c
 #include "list.h"
@@ -125,6 +125,93 @@ int main() {
 ## Linked List v2
 </summary>
 
+### About 
+The second version of the linked list is implemented as a single header file, 
+containing a macro that creates adaptive structures and functions. \
+Also it uses macros as an interface to call all internal functions. 
+This is done to avoid errors related to differences in the type of data supplied 
+to the input and those already in the list.
 
+### Functionality
+List of functions and their complexity:
+- Inserting one element at the end of the list. *O(n)*
+- Getting an element at some index. *O(n)*
+- Removing an element at some index. *O(n)*
+
+### Usage
+This structure has six macros for performing manipulations:
+```
+// Create set of structures and functions for some type
+// Each type should be defined only once!
+// Held only in the global scope!
+DEFINE_LIST(type)
+
+// Initializes the list
+LIST(type of data that will be stored in a list)
+
+// Inserts an element
+LIST_INSERT(data, list, type of input data)
+
+// Returns an element of the expected type
+LIST_GET(index, list, type of expected data)
+
+// Same as get function, except it also removes the element from the list
+LIST_REMOVE(index, list, type of expected data)
+
+// Returns size of the list
+LIST_SIZE(list, type)
+```
+
+Example of int list:
+
+```c
+#include "list.h"
+
+// Defining a list of a specific data type. 
+// Held only in the global scope!
+// At this stage all required structures and functions are created
+DEFINE_LIST(int)
+
+int main() {
+    // Initializing the list, and setting its type to int
+    LinkedList list = LIST(int);
+
+    // Inserting elements
+    LIST_INSERT(1, list, int);
+    LIST_INSERT(2, list, int);
+    LIST_INSERT(3, list, int);
+
+    // Removing an element
+    int n = LIST_REMOVE(0, list, int);
+
+    return 0;
+}
+```
+
+Example of pointer-type list (char *):
+
+```c
+#include "list.h"
+
+// When dealing with pointer types, you need to create a new 
+// data type for them without the asterisk character
+typedef char * string;
+DEFINE_LIST(string)
+
+int main() {
+    // Initializing the list, and setting its type
+    LinkedList list = LIST(string);
+
+    // Inserting elements
+    LIST_INSERT("Earth", list, string);
+    LIST_INSERT("Mars", list, string);
+    LIST_INSERT("Jupyter", list, string);
+
+    // Removing an element
+    string s = LIST_REMOVE(0, list, string);
+
+    return 0;
+}
+```
 
 </details>
