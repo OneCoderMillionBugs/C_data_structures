@@ -35,54 +35,61 @@ List of functions and their complexity:
 ### Usage
 This structure has four macros for performing manipulations:
 ```
-    // Initializes the list
-    LIST(type of data that will be stored in a list)
+// Initializes the list
+LIST(type of data that will be stored in a list)
 
-    // Inserts an element
-    LIST_INSERT(
-        pointer to data, 
-        list address, 
-        type of input data
-    )
+// Inserts an element
+LIST_INSERT(
+    pointer to data, 
+    list address, 
+    type of input data
+)
 
-    // Returns an element
-    // If more precisely: expected type pointer
-    LIST_GET(
-        index, 
-        list address, 
-        type of expected data
-    )
+// Returns an element
+// If more precisely: expected type pointer
+LIST_GET(
+    index, 
+    list address, 
+    type of expected data
+)
 
-    // Same as get function, except it also removes the element from the list
-    LIST_REMOVE(
-        index,
-        list address,
-        type of expected data
-    )
+// Same as get function, except it also removes the element from the list
+LIST_REMOVE(
+    index,
+    list address,
+    type of expected data
+)
 ```
 
 This structure is best suited for pointer types. \
 So all you have to do in this case is:
 
 ```c
-    #include "list.h"
+#include "list.h"
 
-    int main() {
-        // Initializing the list, and setting its type to char*
-        LinkedList list = LIST(char *);
+int main() {
+    // Initializing the list, and setting its type to char*
+    LinkedList list = LIST(char *);
 
-        char s1[] = "First";
-        char s2[] = "Second";
+    char s1[] = "First";
+    char s2[] = "Second";
 
-        // Inserting elements
-        // At this stage, if the types of input data and list data are mismatched, the program terminates
-        LIST_INSERT(s1, (&list), char *);
-        LIST_INSERT(s2, (&list), char *);
+    // In order to avoid memory problems,
+    // we have to pack all data into pointers, and 
+    // then pass the address of that newly created pointers to the insert function
+    char **sptr1 = (char **)s1;
+    char **sptr2 = (char **)s2;
 
-        // Removing an element
-        char *s3 = LIST_REMOVE(1, (&list), char *)
+    // Inserting elements
+    // At this stage, if the types of input data and 
+    // list data are mismatched, the program terminates
+    LIST_INSERT(&sptr1, &list, char *);
+    LIST_INSERT(&sptr2, &list, char *);
 
-        return 0;
-    }
+    // Removing an element
+    char *s3 = LIST_REMOVE(0, (&list), char *);
+
+    return 0;
+}
 ```
 </details>
