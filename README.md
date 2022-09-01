@@ -212,5 +212,22 @@ int main() {
     return 0;
 }
 ```
+</details>
+
+
+<details>
+<summary>
+
+## Circular Queue
+</summary>
+
+### About
+Implementation of a circular queue based on an array of static size.
+
+### Functionality
+List of functions and their complexity:
+- Inserting one element at the end of the queue. *O(1)*
+- Removing the first element from the queue. *O(1)*
+- Getting the first element of the queue without removing it. *O(1)*
 
 </details>
