@@ -59,13 +59,14 @@ LIST_REMOVE(
     type of expected data
 )
 ```
-
+###### Important! Do not ever input literals into LIST_INSERT
 Example with strings:
 
 ```c
 #include "list.h"
 
-int main() {
+int main(void)
+{
     // Initializing the list, and setting its type to char*
     LinkedList list = LIST(char *);
 
@@ -90,4 +91,40 @@ int main() {
     return 0;
 }
 ```
+
+Example with int:
+
+```c
+#include "list.h"
+
+int main() {
+    // Initializing the list, and setting its type to int
+    LinkedList list = LIST(int);
+
+    int n1 = 1;
+    int n2 = 2;
+
+    // In case of non-pointer types we don't
+    // need to create an extra layer of pointers
+    LIST_INSERT(&n1, &list, int);
+    LIST_INSERT(&n2, &list, int);
+
+    // Removing an element
+    int n3 = LIST_REMOVE(0, &list, int);
+    printf("%d\n", n3);
+
+    return 0;
+}
+```
+</details>
+
+
+<details> 
+<summary>
+
+## Linked List v2
+</summary>
+
+
+
 </details>
