@@ -44,12 +44,3 @@ uint8_t bitfield_get(size_t index, Bitfield *bf)
 
     return bf->arr[index / 8] >> (7 - index % 8) & 1;
 }
-
-void bitfield_print(Bitfield *bf)
-{
-    for (size_t i = 0; i < bf->size; i++)
-    {
-        printf("%hhu ", bitfield_get(i, bf));
-    }
-    puts("");
-}
