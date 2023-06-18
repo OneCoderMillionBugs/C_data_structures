@@ -29,7 +29,10 @@ typedef void *LinkedList;
         type##_LinkedList *list = (type##_LinkedList *)malloc(  \
             sizeof(type##_LinkedList)                           \
         );                                                      \
+        list->size = 0;                                         \
         list->T = #type;                                        \
+        list->head = NULL;                                      \
+        list->tail = NULL;                                      \
         return list;                                            \
     }                                                           \
     \
