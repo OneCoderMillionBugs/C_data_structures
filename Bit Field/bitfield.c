@@ -1,8 +1,5 @@
 #include "bitfield.h"
 
-// Since information is contained in 64-bit integers
-// The real size of arr will be N, where N is smallest number that is
-// equal or bigger than required size, and divisible by 8
 Bitfield *bitfield_create(size_t size)
 {
     Bitfield *bf = (Bitfield *)malloc(sizeof(Bitfield));
@@ -12,7 +9,6 @@ Bitfield *bitfield_create(size_t size)
     return bf;
 }
 
-// Set bitfield value at some index
 void bitfield_set(size_t index, _Bool value, Bitfield *bf)
 {
     if (index >= bf->size)
