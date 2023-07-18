@@ -7,6 +7,7 @@ and possibly further personal use.
 * [Linked List v1](#linked-list-v1)
 * [Linked List v2](#linked-list-v2)
 * [Circular Queue](#circular-queue)
+* [Bit Field](#bit-field)
 
 ## General information
 This repository is a collection of various data structures written in the C language. 
@@ -230,5 +231,22 @@ List of functions and their complexity:
 - Inserting one element at the end of the queue. *O(1)*
 - Removing the first element from the queue. *O(1)*
 - Getting the first element of the queue without removing it. *O(1)*
+
+</details>
+
+
+<details>
+<summary>
+
+## Bit Field
+</summary>
+
+### About
+Implementation of a bit field
+
+### Functionality
+List of functions and their complexity:
+- Set value at some index. *O(1)*
+- Get value at some index. *O(1)*
 
 </details>
